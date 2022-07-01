@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header, footer {
+  height: 4rem;
+  background-color: lightgray;
+  display: flex;
+  align-items : center;
+}
+
+main {
+  flex-grow: 1;
+}
