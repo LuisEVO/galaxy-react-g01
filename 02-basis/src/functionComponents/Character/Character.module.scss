@@ -1,0 +1,12 @@
+.card {
+  border: 1px solid lightgrey;
+  border-radius: .25rem;
+  display: flex;
+  img {
+    width: 100px;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+}
+
