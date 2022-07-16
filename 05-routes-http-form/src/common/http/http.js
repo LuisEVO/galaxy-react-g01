@@ -1,34 +1,33 @@
+const generic = (method, url, body) => {
+  // codigo antes de la llamada de cada http
+  return fetch(url, {
+    method,
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  })
+  .then(res => res.json())
+  .then(res => {
+    // codigo despues de la llamada de cada http
+    return res;
+  })
+}
+
 const get = (url) => {
-  return fetch(url).then((res) => res.json());
+  return generic('GET', url);
 };
 
 const post = (url, body) => {
-  return fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  }).then((res) => res.json());
+  return generic('POST', url, body);
 };
 
 const put = (url, body) => {
-  return fetch(url, {
-    method: 'PUT',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  }).then((res) => res.json());
+  return generic('PUT', url, body);
 };
 
 const remove = (url) => {
-  return fetch(url, {
-    method: 'DELETE',
-    headers: {
-      'Content-type': 'application/json',
-    },
-  }).then((res) => res.json());
+  return generic('DELETE', url);
 };
 
 const Http = {

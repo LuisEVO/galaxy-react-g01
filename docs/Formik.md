@@ -123,3 +123,41 @@ const SignIn = () => {
   );
 };
 ```
+
+
+## Validaciones con Yup
+
+### Instalacion
+
+https://github.com/jquense/yup
+
+```
+npm install yup
+yarn add yup
+```
+
+### Importar
+
+`import * as Yup from 'yup';`
+
+### Agregar al formulario
+
+```
+<Formik
+  validationSchema={Yup.object().shape({
+    email: Yup.string().email('Ingrese un formato valido').required('Este campo es requerido'),
+    password: Yup.string().min(5, 'Minimo 5 Caracteres').max(10).required('Este campo es requerido')
+  })}
+>
+```
+
+```
+useFormik({
+  validationSchema: Yup.object().shape({
+    email: Yup.string().email('Ingrese un formato valido').required('Este campo es requerido'),
+    password: Yup.string().min(5, 'Minimo 5 Caracteres').max(10).required('Este campo es requerido')
+  })
+})
+>
+```
+

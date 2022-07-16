@@ -2,6 +2,15 @@ import Http from '../../../common/http/http';
 
 const endpoint = 'http://localhost:3001/products'; 
 
+/**
+ * 
+ * {
+ *  data_id
+ *  product_active
+ * } 
+ * 
+ */
+
 const getAll = () => {
   return Http.get(endpoint)
 }
