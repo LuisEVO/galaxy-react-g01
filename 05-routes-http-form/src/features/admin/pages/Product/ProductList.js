@@ -11,7 +11,9 @@ const ProductList = () => {
   }, []);
 
   const loadProducts = () => {
-    ProductHttp.getAll().then((res) => setProducts(res));
+    ProductHttp.getAll().then((res) => {
+        setProducts(res)
+    });
   }
 
   const goCreatePoductPage = () => {

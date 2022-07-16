@@ -1,4 +1,4 @@
-import Http from '../../../common/http/http';
+import Http from '../../../common/http';
 
 const endpoint = 'http://localhost:3001/products'; 
 

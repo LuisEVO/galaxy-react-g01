@@ -12,6 +12,10 @@ const generic = (method, url, body) => {
     // codigo despues de la llamada de cada http
     return res;
   })
+  .catch(err =>  {
+    // interceptar los errores
+    return err
+  })
 }
 
 const get = (url) => {
@@ -30,11 +34,11 @@ const remove = (url) => {
   return generic('DELETE', url);
 };
 
-const Http = {
+const FetchHttp = {
   get,
   post,
   put,
   delete: remove
 };
 
-export default Http;
+export default FetchHttp;
