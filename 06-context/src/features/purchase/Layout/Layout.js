@@ -1,9 +1,12 @@
 import { Outlet } from 'react-router-dom';
 import { Box } from '@mui/material';
 import LayoutStepper from './LayoutStepper';
+import LayoutProvider from '../context/LayoutContext/LayoutProvider';
+import PurchaseProvider from '../context/PurchaseContext/PurchaseProvider';
 
-const Layout = () => {
+const PurchaseLayout = () => {
   return (
+    <LayoutProvider>
     <main>
       <Box
         sx={{
@@ -24,7 +27,8 @@ const Layout = () => {
         </Box>
       </Box>
     </main>
+    </LayoutProvider>
   );
 };
 
-export default Layout;
+export default PurchaseLayout;
