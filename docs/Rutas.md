@@ -146,39 +146,3 @@ const [searchParams] = useSearchParams();
 
 searchParams.get('nombreDelQueryParam')
 ```
-
-## Usando componentes de Formik
-```
-const SignIn = () => {
-  return (
-    <Formik
-      initialValues={initialValues}
-      validate={validate}
-      onSubmit={(formValues) => {
-        console.log('llamada http', formValues);
-      }}
-    >
-      {() => (
-        <Form
-          autoComplete='off'
-          className={styles.container}
-        >
-          <Field
-            type='text'
-            placeholder='Email'
-            name='email'
-          />
-          <ErrorMessage name='email'/>
-          <Field
-            type='password'
-            placeholder='Password'
-            name="password"
-          />
-          <ErrorMessage name='password'/>
-          <button type='submit'>Ingresar</button>
-        </Form>
-      )}
-    </Formik>
-  );
-};
-```
