@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import purchaseReducer from './purchase/reducer';
 
 const reducers = combineReducers({
-  purchase: purchaseReducer
+  purchase: purchaseReducer,
 })
 
 const store = createStore(reducers, applyMiddleware(thunk));

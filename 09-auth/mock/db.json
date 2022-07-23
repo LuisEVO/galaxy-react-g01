@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$SpKlgqWLaUaMy/wqo..tjuiA8fXGoK2EHilqI0M75zSMeGQaz.GiK",
+      "id": 1
+    }
+  ],
+  "step-1": {
+    "plans": [
+      { "id": "M", "label": "Mensual S/ 12.99" },
+      { "id": "A", "label": "Anual S/ 120.00" }
+    ],
+    "accounts": [
+      { "id": "CT11111", "label": "192-************-98" },
+      { "id": "CT22222", "label": "194-************-45" }
+    ]
+  }
+}

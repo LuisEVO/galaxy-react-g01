@@ -24,3 +24,5 @@ npm install formik
 ```
 npm install yup
 ```
+
+npm install @mui/material @emotion/react @emotion/styled react-router-dom formik yup 

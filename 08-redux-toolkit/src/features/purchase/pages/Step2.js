@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import {
   Box,
   Button,
@@ -13,22 +13,26 @@ import {
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import useLayoutContext from '../context/LayoutContext/useLayoutContext';
-import usePurchaseContext from '../context/PurchaseContext/usePurchaseContext';
-import { PurchaseActions } from '../context/PurchaseContext/PurchaseProvider';
+import { useDispatch } from 'react-redux';
+import PurchaseActions from '../../../core/store/purchase/actions';
+import usePurchase from '../../../core/store/purchase/usePurchase';
 
 const Step2 = () => {
   const navigate = useNavigate();
 
   const { setActiveStep } = useLayoutContext()
-  const { state, dispatch } = usePurchaseContext()
+
+  const { step2 } = usePurchase()
+  const dispatch = useDispatch()
+
   
   const { values, handleSubmit, getFieldProps, isValid } = useFormik({
     initialValues: {
-      termsConditions: state.step2.termsConditions,
-      offers: state.step2.offers
+      termsConditions: step2.termsConditions,
+      offers: step2.offers
     },
     onSubmit: (values) => {
-      console.log(state)
+      // http
     }
   })
   useEffect(() => {
@@ -39,10 +43,10 @@ const Step2 = () => {
     dispatch(PurchaseActions.setStep2(values))
   }, [values, dispatch])
 
-
   const goBack = () => {
     navigate('../paso-1')
   }
+
   return (
     <Box>
       <Card>

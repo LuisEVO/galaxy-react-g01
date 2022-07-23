@@ -32,6 +32,7 @@ const Step2 = () => {
       offers: step2.offers
     },
     onSubmit: (values) => {
+      // http
     }
   })
   useEffect(() => {
